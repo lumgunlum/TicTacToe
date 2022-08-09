@@ -99,7 +99,17 @@ public class LogicMain : MonoBehaviour
         if (point[2, 0] != 0 && point[2, 0] == point[1, 1] && point[2, 0] == point[0, 2])
             return point[2, 0];
 
-        return 0;
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (point[i, j] == 0)
+                    return 0;
+            }
+
+        }
+
+        return -1;
     }
 
     void CheckWinner()
@@ -195,29 +205,76 @@ public class LogicMain : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
     void AITurn()
     {
         if (playMode == Mode.Stop)
             return;
         if (!isAIRound)
             return;
+        var round = putChessRound % 2;
+        var tmpI = -1;
+        var tmpJ = -1;
+        int[] left = new int[9];
+        int leftCount = 0;
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
             {
                 if (point[i, j] == 0)
                 {
-                    var r = putChessRound % 2;
-                    point[i, j] = r + 1;
-                    var name = (i + 1) + "_" + (j + 1);
-                    var index = indexs.IndexOf(name);
-                    SetChess(buttons[index], sprites[r]);
-                    putChessRound += 1;
-                    isAIRound = false;
-                    return;
+                    // 如果是ai下这里
+                    point[i, j] = round + 1;
+                    var win = CheckPoint();
+                    // 结束 
+                    if (win == round + 1)
+                    {
+                        var name = (i + 1) + "_" + (j + 1);
+                        var index = indexs.IndexOf(name);
+                        SetChess(buttons[index], sprites[round]);
+                        putChessRound += 1;
+                        isAIRound = false;
+                        return;
+                    }
+
+                    // 如果是对方下这里
+                    point[i, j] = 2 - round;
+                    // 对方赢了
+                    win = CheckPoint();
+                    if (win == 2 - round)
+                    {
+                        tmpI = i;
+                        tmpJ = j;
+                    }
+                    point[i, j] = 0;
+                    left[leftCount++] = i * 3 + j;
                 }
             }
         }
+
+        if (tmpI == -1)
+        {
+            int p = Random.Range(0, leftCount);
+            tmpI = left[p] / 3;
+            tmpJ = left[p] % 3;
+        }
+
+        point[tmpI, tmpJ] = round + 1;
+        var name1 = (tmpI + 1) + "_" + (tmpJ + 1);
+        var index1 = indexs.IndexOf(name1);
+        SetChess(buttons[index1], sprites[round]);
+        putChessRound += 1;
+        isAIRound = false;
+        return;
+
     }
 
 }
