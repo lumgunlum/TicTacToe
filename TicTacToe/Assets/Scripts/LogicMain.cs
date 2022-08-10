@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,10 +27,10 @@ public class LogicMain : MonoBehaviour
         {0, 0, 0},
     };
 
-    public List<string> indexs = new List<string>(){
-        "1_1", "1_2", "1_3",
-        "2_1", "2_2", "2_3",
-        "3_1", "3_2", "3_3",
+    public List<int> indexs = new List<int>(){
+        1, 2, 3,
+        4, 5, 6,
+        7, 8, 9
     };
 
     // Start is called before the first frame update
@@ -223,7 +224,7 @@ public class LogicMain : MonoBehaviour
         var round = putChessRound % 2;
         var tmpI = -1;
         var tmpJ = -1;
-        int[] left = new int[9];
+        List<int> left = new List<int>();
         int leftCount = 0;
         for (int i = 0; i < 3; i++)
         {
@@ -237,8 +238,7 @@ public class LogicMain : MonoBehaviour
                     // 结束 
                     if (win == round + 1)
                     {
-                        var name = (i + 1) + "_" + (j + 1);
-                        var index = indexs.IndexOf(name);
+                        var index = i * 3 + j;
                         SetChess(buttons[index], sprites[round]);
                         putChessRound += 1;
                         isAIRound = false;
@@ -255,21 +255,39 @@ public class LogicMain : MonoBehaviour
                         tmpJ = j;
                     }
                     point[i, j] = 0;
-                    left[leftCount++] = i * 3 + j;
+                    left.Add(i * 3 + j);
                 }
             }
         }
 
         if (tmpI == -1)
         {
-            int p = Random.Range(0, leftCount);
-            tmpI = left[p] / 3;
-            tmpJ = left[p] % 3;
+            // 占据中心点
+            if (left.Contains(4))
+            {
+                tmpI = tmpJ = 1;
+            }
+            else
+            {
+                var conner = left.Where(t => t == 0 || t == 2 || t == 6 || t == 8);
+                var count = conner.Count() ;
+                if (count> 0)
+                {
+                    var p =  Random.Range(0, count);
+                    tmpI = conner.ToArray()[p] / 3;
+                    tmpJ = conner.ToArray()[p] % 3;
+                }
+                else
+                {
+                    var p = Random.Range(0, leftCount);
+                    tmpI = left[p] / 3;
+                    tmpJ = left[p] % 3;
+                }
+            }
         }
 
         point[tmpI, tmpJ] = round + 1;
-        var name1 = (tmpI + 1) + "_" + (tmpJ + 1);
-        var index1 = indexs.IndexOf(name1);
+        var index1 = tmpI * 3 + tmpJ;
         SetChess(buttons[index1], sprites[round]);
         putChessRound += 1;
         isAIRound = false;
