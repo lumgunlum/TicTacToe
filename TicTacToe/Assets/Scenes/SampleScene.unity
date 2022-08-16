@@ -187,7 +187,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -376,7 +376,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -471,7 +471,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: PVE
         m_Mode: 1
         m_Arguments:
@@ -724,7 +724,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 815178471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa4ede951c3a37409df56051ac76ff9, type: 3}
+  m_Script: {fileID: 11500000, guid: 707fb396496d876408474ec307e430c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
@@ -936,7 +936,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 72cce889a2021904f85b1bed6274a3c5, type: 3}
   - {fileID: 21300000, guid: e9a44a21009b6de42a5084bf81edc21f, type: 3}
   titleText: {fileID: 1974215005}
-  indexs: 000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &815178473
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,7 +1071,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -1300,7 +1299,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -1590,7 +1589,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -1685,7 +1684,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
@@ -1897,7 +1896,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: PVP
         m_Mode: 1
         m_Arguments:
@@ -2067,7 +2066,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -2199,7 +2198,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
@@ -2294,7 +2293,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -2533,7 +2532,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: EVP
         m_Mode: 1
         m_Arguments:
@@ -2769,7 +2768,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815178472}
-        m_TargetAssemblyTypeName: LogicMain, Assembly-CSharp
+        m_TargetAssemblyTypeName: TacGame.ChessLogicMain, Assembly-CSharp
         m_MethodName: ChessDown
         m_Mode: 2
         m_Arguments:
